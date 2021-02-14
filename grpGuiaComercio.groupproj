@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B3F02C7A-E162-4AB4-B951-F5110CA3AF9D}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Mobile\GuiaComercio.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Servidor\ServerAlvo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="GestorClient\GGClient.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="GuiaComercio">
+        <MSBuild Projects="Mobile\GuiaComercio.dproj"/>
+    </Target>
+    <Target Name="GuiaComercio:Clean">
+        <MSBuild Projects="Mobile\GuiaComercio.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GuiaComercio:Make">
+        <MSBuild Projects="Mobile\GuiaComercio.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ServerAlvo">
+        <MSBuild Projects="Servidor\ServerAlvo.dproj"/>
+    </Target>
+    <Target Name="ServerAlvo:Clean">
+        <MSBuild Projects="Servidor\ServerAlvo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ServerAlvo:Make">
+        <MSBuild Projects="Servidor\ServerAlvo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="GGClient">
+        <MSBuild Projects="GestorClient\GGClient.dproj"/>
+    </Target>
+    <Target Name="GGClient:Clean">
+        <MSBuild Projects="GestorClient\GGClient.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="GGClient:Make">
+        <MSBuild Projects="GestorClient\GGClient.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="GuiaComercio;ServerAlvo;GGClient"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="GuiaComercio:Clean;ServerAlvo:Clean;GGClient:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="GuiaComercio:Make;ServerAlvo:Make;GGClient:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

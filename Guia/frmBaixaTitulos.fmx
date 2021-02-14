@@ -1,0 +1,200 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 641
+  ClientWidth = 552
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 0
+  object Edit1: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 1
+    ReadOnly = True
+    Position.X = 104.000000000000000000
+    Position.Y = 176.000000000000000000
+  end
+  object Edit2: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 2
+    ReadOnly = True
+    Position.X = 104.000000000000000000
+    Position.Y = 218.000000000000000000
+  end
+  object Edit3: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 3
+    ReadOnly = True
+    Position.X = 300.000000000000000000
+    Position.Y = 218.000000000000000000
+  end
+  object Edit4: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 4
+    Text = '3265252'
+    TextSettings.Font.Size = 22.000000000000000000
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    TextSettings.HorzAlign = Center
+    Position.X = 140.000000000000000000
+    Position.Y = 96.000000000000000000
+    Size.Width = 145.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    StyledSettings = [Family, FontColor]
+  end
+  object Edit5: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 5
+    ReadOnly = True
+    Position.X = 104.000000000000000000
+    Position.Y = 261.000000000000000000
+  end
+  object Edit6: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 6
+    ReadOnly = True
+    Text = '15,00'
+    TextSettings.Font.Size = 18.000000000000000000
+    TextSettings.Font.StyleExt = {00060000000000000004000000}
+    TextSettings.HorzAlign = Trailing
+    Position.X = 260.000000000000000000
+    Position.Y = 171.000000000000000000
+    Size.Width = 81.000000000000000000
+    Size.Height = 33.000000000000000000
+    Size.PlatformDefault = False
+    StyledSettings = [Family, FontColor]
+  end
+  object Label1: TLabel
+    StyledSettings = [Family, Size, FontColor]
+    Position.X = 40.000000000000000000
+    Position.Y = 179.000000000000000000
+    Size.Width = 57.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    Text = 'Contrato'
+    TabOrder = 7
+  end
+  object Label2: TLabel
+    StyledSettings = [Family, Size, FontColor]
+    Position.X = 52.000000000000000000
+    Position.Y = 221.000000000000000000
+    Size.Width = 45.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    Text = 'Parcela'
+    TabOrder = 8
+  end
+  object Label3: TLabel
+    StyledSettings = [Family, Size, FontColor]
+    Position.X = 224.000000000000000000
+    Position.Y = 221.000000000000000000
+    Size.Width = 69.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    Text = 'Vencimento'
+    TabOrder = 9
+  end
+  object Label4: TLabel
+    StyledSettings = [Family, Size, FontColor]
+    Position.X = 28.000000000000000000
+    Position.Y = 110.000000000000000000
+    Size.Width = 109.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    Text = 'Nr. do Documento'
+    TabOrder = 10
+  end
+  object Label5: TLabel
+    StyledSettings = [Family, Size, FontColor]
+    Position.X = 12.000000000000000000
+    Position.Y = 264.000000000000000000
+    Size.Width = 85.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    Text = 'Data do Pagto'
+    TabOrder = 11
+  end
+  object Label6: TLabel
+    StyledSettings = [Family, Size, FontColor]
+    Position.X = 216.000000000000000000
+    Position.Y = 179.000000000000000000
+    Size.Width = 37.000000000000000000
+    Size.Height = 17.000000000000000000
+    Size.PlatformDefault = False
+    TextSettings.Font.StyleExt = {00070000000000000004000000}
+    Text = 'Valor'
+    TabOrder = 12
+  end
+  object Panel2: TPanel
+    Align = Top
+    Size.Width = 552.000000000000000000
+    Size.Height = 71.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object SpeedButton1: TSpeedButton
+      Align = Right
+      Position.X = 462.000000000000000000
+      Size.Width = 90.000000000000000000
+      Size.Height = 71.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'escapetoolbutton'
+      Text = 'Voltar'
+    end
+    object Label11: TLabel
+      StyledSettings = [Family, Size, FontColor]
+      Position.X = 45.000000000000000000
+      Position.Y = 10.000000000000000000
+      Size.Width = 112.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      Text = 'Baixa de Titulos'
+      TabOrder = 18
+    end
+    object Line2: TLine
+      LineType = Diagonal
+      Position.X = 40.000000000000000000
+      Position.Y = 30.000000000000000000
+      Size.Width = 409.000000000000000000
+      Size.Height = 1.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object lblComercio: TLabel
+      StyledSettings = [Family, FontColor]
+      Position.X = 45.000000000000000000
+      Position.Y = 35.000000000000000000
+      Size.Width = 404.000000000000000000
+      Size.Height = 17.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 18.000000000000000000
+      TabOrder = 16
+    end
+    object lblStatusSubCat: TLabel
+      StyledSettings = [Family, Size]
+      Position.X = 209.000000000000000000
+      Position.Y = 34.000000000000000000
+      Size.Width = 170.000000000000000000
+      Size.Height = 32.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.FontColor = xFFFF2020
+      Text = 'Alterando                           Pressione ESC para cancelar'
+      Visible = False
+      TabOrder = 17
+    end
+  end
+  object Line1: TLine
+    LineType = Top
+    Position.X = 12.000000000000000000
+    Position.Y = 156.000000000000000000
+    Size.Width = 530.000000000000000000
+    Size.Height = 5.000000000000000000
+    Size.PlatformDefault = False
+  end
+end

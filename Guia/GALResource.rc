@@ -1,0 +1,7 @@
+imgAdicionar RCDATA "Imagens\\+.png"
+fIconError RCDATA "Imagens\\Error.png"
+fIconExclamation RCDATA "Imagens\\Exclamation.png"
+fIconInformation RCDATA "Imagens\\Information.png"
+fIconInterrogation RCDATA "Imagens\\Interrogation.png"
+fIconLixo RCDATA "Imagens\\Trash.png"
+imgLogo RCDATA "Imagens\\Logo\\AlvoLeste_.png"
