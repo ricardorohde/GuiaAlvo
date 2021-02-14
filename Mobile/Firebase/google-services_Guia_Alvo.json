@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "313349730442",
+    "firebase_url": "https://guiaalvo.firebaseio.com",
+    "project_id": "guiaalvo",
+    "storage_bucket": "guiaalvo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313349730442:android:3dbc3de16dd1a279543d73",
+        "android_client_info": {
+          "package_name": "com.erasoft.guiaalvo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "313349730442-qbr2nskupm69sn8104j2mk0tsoikrubf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBhzi8vgb6nhS88_w0PMLkMPol7hHWsr7s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "313349730442-qbr2nskupm69sn8104j2mk0tsoikrubf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,70 @@
+object frmFrameLoading: TfrmFrameLoading
+  Size.Width = 320.000000000000000000
+  Size.Height = 547.000000000000000000
+  Size.PlatformDefault = False
+  object Rectangle1: TRectangle
+    Align = Contents
+    Fill.Color = xC8FFFFFF
+    Size.Width = 320.000000000000000000
+    Size.Height = 547.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    object Layout1: TLayout
+      Align = VertCenter
+      Position.Y = 246.000000000000000000
+      Size.Width = 320.000000000000000000
+      Size.Height = 55.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      object Arc1: TArc
+        Align = Center
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Color = xFFA4A4A4
+        Stroke.Thickness = 5.000000000000000000
+        EndAngle = 360.000000000000000000
+      end
+      object Arc2: TArc
+        Align = Center
+        Size.Width = 50.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Color = xFF002890
+        Stroke.Thickness = 5.000000000000000000
+        EndAngle = 280.000000000000000000
+        object FloatAnimation: TFloatAnimation
+          Duration = 1.000000000000000000
+          Loop = True
+          PropertyName = 'RotationAngle'
+          StartValue = 0.000000000000000000
+          StopValue = 360.000000000000000000
+        end
+      end
+    end
+    object Layout2: TLayout
+      Align = VertCenter
+      Margins.Top = 80.000000000000000000
+      Position.Y = 300.000000000000000000
+      Size.Width = 320.000000000000000000
+      Size.Height = 27.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object Label1: TLabel
+        Align = Top
+        StyledSettings = [Family]
+        Margins.Top = 5.000000000000000000
+        Position.Y = 5.000000000000000000
+        Size.Width = 320.000000000000000000
+        Size.Height = 17.000000000000000000
+        Size.PlatformDefault = False
+        TextSettings.Font.Size = 14.000000000000000000
+        TextSettings.Font.StyleExt = {00060000000000000004000000}
+        TextSettings.FontColor = xFF3B345D
+        TextSettings.HorzAlign = Center
+        Text = 'Carregando...'
+        TabOrder = 0
+      end
+    end
+  end
+end

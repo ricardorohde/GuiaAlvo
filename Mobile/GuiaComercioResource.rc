@@ -1,0 +1,6 @@
+confirmation RCDATA "Imagens\\IconesMensagens\\Confirmation.png"
+information RCDATA "Imagens\\IconesMensagens\\Informacao.png"
+question RCDATA "Imagens\\IconesMensagens\\Question.png"
+warning RCDATA "Imagens\\IconesMensagens\\Warning.png"
+UnViewSenha RCDATA "Imagens\\DesabilitaViewSenha.png"
+ViewSenha RCDATA "Imagens\\HabilitaViewSenha.png"

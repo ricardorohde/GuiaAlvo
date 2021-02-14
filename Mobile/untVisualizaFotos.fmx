@@ -1,0 +1,209 @@
+object frmVisualizaFotos: TfrmVisualizaFotos
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 640
+  ClientWidth = 360
+  Fill.Kind = Solid
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  DesignerMasterStyle = 3
+  object Layout3: TLayout
+    Align = Client
+    Size.Width = 360.000000000000000000
+    Size.Height = 640.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object imgViewFoto: TImage
+      Touch.GestureManager = GestureManager1
+      OnGesture = imgViewFotoGesture
+      MultiResBitmap.Height = 450
+      MultiResBitmap.Width = 720
+      MultiResBitmap.LoadSize = 2
+      MultiResBitmap = <
+        item
+        end>
+      Align = Client
+      Size.Width = 360.000000000000000000
+      Size.Height = 640.000000000000000000
+      Size.PlatformDefault = False
+      WrapMode = Stretch
+      object Layout1: TLayout
+        Align = Top
+        Size.Width = 360.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object sbtnFecharFoto: TSpeedButton
+          Align = Right
+          IconTintColor = claWhite
+          Position.X = 312.000000000000000000
+          Position.Y = 1.000000000000000000
+          Size.Width = 48.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'deletetoolbutton'
+          OnClick = sbtnFecharClick
+          object ShadowEffect1: TShadowEffect
+            Distance = 3.000000000000000000
+            Direction = 45.000000000000000000
+            Softness = 0.100000001490116100
+            Opacity = 1.000000000000000000
+            ShadowColor = claBlack
+          end
+        end
+      end
+      object Layout2: TLayout
+        Align = Bottom
+        Position.Y = 590.000000000000000000
+        Size.Width = 360.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object sbtnProximaFoto: TSpeedButton
+          Align = Right
+          IconTintColor = claWhite
+          Position.X = 312.000000000000000000
+          Position.Y = 1.000000000000000000
+          Size.Width = 48.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'arrowrighttoolbutton'
+          Text = 'sbtnFechar'
+          OnClick = sbtnProximaFotoClick
+          object ShadowEffect3: TShadowEffect
+            Distance = 3.000000000000000000
+            Direction = 45.000000000000000000
+            Softness = 0.100000001490116100
+            Opacity = 1.000000000000000000
+            ShadowColor = claBlack
+          end
+        end
+        object sbtnFotoAnterior: TSpeedButton
+          Align = Left
+          IconTintColor = claWhite
+          Position.Y = 1.000000000000000000
+          Size.Width = 48.000000000000000000
+          Size.Height = 48.000000000000000000
+          Size.PlatformDefault = False
+          StyleLookup = 'arrowlefttoolbutton'
+          Text = 'sbtnFechar'
+          OnClick = sbtnFotoAnteriorClick
+          object ShadowEffect2: TShadowEffect
+            Distance = 3.000000000000000000
+            Direction = 45.000000000000000000
+            Softness = 0.100000001490116100
+            Opacity = 1.000000000000000000
+            ShadowColor = claBlack
+          end
+        end
+      end
+    end
+  end
+  object Layout4: TLayout
+    Align = Bottom
+    Margins.Bottom = 100.000000000000000000
+    Position.Y = 440.000000000000000000
+    Size.Width = 360.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+    TabOrder = 1
+    object imgFoto2: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Align = Left
+      Position.X = 50.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object imgFoto6: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Align = Left
+      Position.X = 250.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object imgFoto4: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Align = Left
+      Position.X = 150.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object imgFoto3: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Align = Left
+      Position.X = 100.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object imgFoto5: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Align = Left
+      Position.X = 200.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object imgFoto1: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Align = Left
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object imgFoto7: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Align = Left
+      Position.X = 350.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object imgFoto8: TImage
+      MultiResBitmap = <
+        item
+        end>
+      Align = Left
+      Position.X = 300.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object GestureManager1: TGestureManager
+    Sensitivity = 80.000000000000000000
+    Left = 272
+    Top = 308
+    GestureData = <
+      item
+        Control = imgViewFoto
+        Collection = <
+          item
+            GestureID = sgiLeft
+          end
+          item
+            GestureID = sgiRight
+          end>
+      end>
+  end
+end

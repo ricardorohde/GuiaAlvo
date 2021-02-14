@@ -1,0 +1,674 @@
+object frmUsuarios: TfrmUsuarios
+  Left = 0
+  Top = 0
+  Caption = 'Form2'
+  ClientHeight = 617
+  ClientWidth = 320
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  OnClose = FormClose
+  DesignerMasterStyle = 3
+  object recTool: TRectangle
+    Align = Top
+    Fill.Color = xFF2F3B58
+    Size.Width = 320.000000000000000000
+    Size.Height = 60.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    object sbtnVoltar: TImage
+      MultiResBitmap.Height = 64
+      MultiResBitmap.Width = 64
+      MultiResBitmap.LoadSize = 2
+      MultiResBitmap = <
+        item
+          Width = 24
+          Height = 24
+          PNG = {
+            89504E470D0A1A0A0000000D4948445200000018000000180806000000E0773D
+            F8000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+            00D849444154484BEDD5390AC2401480E1A0A0825BE986B7F0027A05B152B0D7
+            D2DAFD14A2A578326F208A222EFF8B7992C618E14DE70F1F990C61920C2EDE3F
+            EB8A28BC866EDA60879C7F66DC048F4043262C5B4217EF2205B3C24FDE9609CB
+            16D0C5FB3261D90CB2F0114D99B04C9FFC862192A8A212A11E1C33F8985CB082
+            6ECB157B1C708970865C2BE311DE258263547AB338EE81AF85B76800791079BB
+            72841A4A48235653C84D4E68C9848BE6D0D737FF986A63E84D3A32E1A2F017AE
+            87D8FBFC4B4E7FECB435B6C8FA670E923F9BFC6BF8CF24CF7B0299A843376528
+            47A10000000049454E44AE426082}
+          FileName = 'D:\Dropbox\MegaDestake\Mobile\png\Seta.png'
+        end>
+      Align = Left
+      Size.Width = 50.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      WrapMode = Place
+      OnClick = sbtnVoltarClick
+      object FillRGBEffect16: TFillRGBEffect
+        Color = claWhite
+      end
+    end
+    object lytTitulos: TLayout
+      Align = Client
+      Size.Width = 270.000000000000000000
+      Size.Height = 60.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 1
+      object Layout60: TLayout
+        Align = Top
+        Size.Width = 270.000000000000000000
+        Size.Height = 33.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object lblGrupo: TLabel
+          Align = Client
+          StyledSettings = [Family, Style]
+          Margins.Left = 10.000000000000000000
+          Size.Width = 260.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 20.000000000000000000
+          TextSettings.FontColor = claWhite
+          Text = 'Meus dados'
+          TabOrder = 0
+        end
+        object Line10: TLine
+          Align = Bottom
+          LineType = Bottom
+          Margins.Left = 5.000000000000000000
+          Margins.Right = 5.000000000000000000
+          Position.X = 5.000000000000000000
+          Position.Y = 32.000000000000000000
+          Size.Width = 260.000000000000000000
+          Size.Height = 1.000000000000000000
+          Size.PlatformDefault = False
+          Stroke.Color = claWhite
+        end
+      end
+      object Layout61: TLayout
+        Align = Client
+        Size.Width = 270.000000000000000000
+        Size.Height = 27.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object lblSubGrupo: TLabel
+          Align = Client
+          StyledSettings = [Family]
+          Margins.Left = 10.000000000000000000
+          Size.Width = 260.000000000000000000
+          Size.Height = 27.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 15.000000000000000000
+          TextSettings.Font.StyleExt = {00030000000000000004000000}
+          TextSettings.FontColor = claWhite
+          TabOrder = 0
+        end
+      end
+    end
+  end
+  object tbcDados: TTabControl
+    Align = Client
+    Size.Width = 320.000000000000000000
+    Size.Height = 557.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 0
+    TabOrder = 1
+    TabPosition = None
+    Sizes = (
+      320s
+      557s
+      320s
+      557s)
+    object tbiDados: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'tbiDados'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object Layout1: TLayout
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 20.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 20.000000000000000000
+        Size.Width = 300.000000000000000000
+        Size.Height = 60.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Label1: TLabel
+          Align = Top
+          StyledSettings = [Family, Size, Style]
+          Size.Width = 300.000000000000000000
+          Size.Height = 23.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.FontColor = xFF6A6A6A
+          Text = 'Nome'
+          TabOrder = 1
+        end
+        object lblNome: TLabel
+          Align = Top
+          Margins.Top = 5.000000000000000000
+          Position.Y = 28.000000000000000000
+          Size.Width = 300.000000000000000000
+          Size.Height = 23.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+        end
+      end
+      object Layout2: TLayout
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 80.000000000000000000
+        Size.Width = 300.000000000000000000
+        Size.Height = 60.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object lblCelular: TLabel
+          Align = Top
+          StyledSettings = [Family, Size, Style]
+          Size.Width = 300.000000000000000000
+          Size.Height = 23.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.FontColor = xFF6A6A6A
+          Text = 'Celular'
+          TabOrder = 1
+        end
+        object lblNrCelular: TLabel
+          Align = Top
+          Margins.Top = 5.000000000000000000
+          Position.Y = 28.000000000000000000
+          Size.Width = 300.000000000000000000
+          Size.Height = 23.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 0
+        end
+      end
+      object recbtnAlterarSenha: TRectangle
+        Align = Top
+        Fill.Color = xFF2F3B58
+        Margins.Left = 140.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 140.000000000000000000
+        Position.Y = 150.000000000000000000
+        Size.Width = 170.000000000000000000
+        Size.Height = 39.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object lblCaptionAlterarSenha: TLabel
+          Align = Client
+          StyledSettings = [Family, Style]
+          HitTest = True
+          Size.Width = 170.000000000000000000
+          Size.Height = 39.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 13.000000000000000000
+          TextSettings.FontColor = claWhite
+          TextSettings.HorzAlign = Center
+          Text = 'Alterar Senha'
+          TabOrder = 0
+          OnClick = lblCaptionAlterarSenhaClick
+        end
+      end
+    end
+    object tbiSenha: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'tbiSenha'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object Layout3: TLayout
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 20.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 20.000000000000000000
+        Size.Width = 300.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object edtSenhaAtual: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = VertCenter
+          TabOrder = 0
+          Password = True
+          Position.Y = 9.000000000000000000
+          Size.Width = 300.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          TextPrompt = 'Senha Atual'
+          object imgViewSenhaAtual: TImage
+            MultiResBitmap.Height = 64
+            MultiResBitmap.Width = 64
+            MultiResBitmap.LoadSize = 2
+            MultiResBitmap = <
+              item
+                Width = 64
+                Height = 64
+                PNG = {
+                  89504E470D0A1A0A0000000D4948445200000040000000400806000000AA6971
+                  DE000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                  051849444154785EED995B685C4518C7734FC4B844B2B6464483D87AA92DA878
+                  79B020F6410DE28BA918C56A2836EDE6B69BCD7BC8AB49767323C4C49A229660
+                  290A8297A722F549ACB626081204A917EA65B34812B4696EFEBE73BE5DB29274
+                  F7CCD9B582F383E9CCFCCFD973E6FBE6FB66E6A445168BC562B1582C168BC562
+                  B1582C96FF19C55A179C9191915B363636F6D3DC4BBDBBB8B8F84EEAE0FAFA7A
+                  359A1461A9A4A464896B09AE7D473D8736BBBABA7AB6ABABEB927B4B7E29A803
+                  8686861EC590260C6910835536421C42F5210E9B8E44229FBBAA7FF2EE80D1D1
+                  D16A067B9881B6F9357A3BC41944CA28CF3FDED6D6B6A4B2117973C0C0C0C075
+                  6565655D0CAA9B6E8DAB169C3F287D2B2B2BF16834FA972B79232F0E20D41B31
+                  3C4EF35657F9D7F989A8887476769ED67ECEF872407F7F7FB0BCBC7C1CE39F53
+                  E95A739AB11C6D6F6F9FD77E564AB4F64C3C1E7F04E3BFF261FC057E7B8C7217
+                  B35725656D6DED6EEA10D766DC5B3CD3C8DA735EC6A6FDAC1845C0F0F07013D5
+                  094A85237800232FB380B57774741CC7F80D9533E8E9E9290906834770C620DD
+                  4A57F5C415CAABBC63DAED6E8F670790EF61BC1C2B2D2DF5FC5B319EEA49B6B1
+                  B3BA68B6E28417D1EE95EB18FC0DD5C9402030D6DCDC7C99B3C3E3689FA07976
+                  02EFDAE0F911D26148A52DF16404331FA18AB93DEF60CC6B2C546FB255DE8E13
+                  3F46BAC7BD92893882C13FDDDADAFA230E973419D34B9EE159B2384A246D49CE
+                  0E181C1C7C85874D99CCBC7281D97820168B55B1767C497F4BE3538813A81E4C
+                  26932BB5B5B5E769EF732E78442281314B3ABCAD5206392D8218FF18039AF461
+                  7C11B3F886E4BC843DDDAB1A2F70EF1E4AA8B7B7779D774FA8EC191DF3A4D8E0
+                  2A996475C0D8D8D80E16AD533CA85C2553CEC83F182539BF99F73170078ED949
+                  FD816A295E927F4817E7B73EA8101B48A79BB49F26AB03F81019A7AA737BE660
+                  C4456D3A0B5E0A8C6E21477F0F8542BFD13EA2720AE7DE9A9A9AEF9D9E3FEA24
+                  0AB59DC6F81C902F580FD269451418A7582EE0E0756DA6C9EA0099212ADF9FA2
+                  4440BDD43C4F16B7349CE3253F77B233DCCC8235A9B203BF71EE5D5858B8C311
+                  FCF133EF3AAAED34591D20E149759022870B63C8C127B479526B07C2F259AEFD
+                  82B197683FA3B203EBCE3BDA3CA0B5295770FCF3DDDDDD09EDA7C939E438031C
+                  62864EF8D80966E6E7E7EFAFAFAFAF6046CF61EC1ED5B70487CC72CF43BA0D7E
+                  8D749F7BC51BB20DE2E09799C80CC7A7C8790D907D14E3A3DA35619F1C6FE584
+                  27879C7FA6C266D4F80606BD8CF1F26D6064BCC098C3DB192F789E4D8EA79DEC
+                  0C71C34858C6B0A738107D3A353555B5B8B8780C4DB63A67B5979C97B0A71E17
+                  E3893A491B39319A7C73C8018879EB1855694B8CC29945EB05C24A3E864C3E54
+                  C409E144223121871CD532908F219DF9018A67E36199083B84134F697F5B4CF3
+                  D9F91CC6C3F282DB5CC533330C7282D93E93DAE775B53F8083E43C609AF317F9
+                  FDC17038FC854A57C5D80102E9508B1172506A74956B0B637997F40C45A3D1A4
+                  4A59F1E58014FF813F89FD408990EFEFB9DDDCC98B0304F9BEE754172104BB49
+                  8D1B552E344966FDF540203024BB8B6A9EC89B0352F4F5F55D5F5959799881B5
+                  131505F9B338EBC61C8BF008EF79ABA5A5E54F958DC8BB0336C336F630551303
+                  6E60C0BB5DD50C22EB5B22EB239C3ACD367A4E65DF14D4019B89C5627518B09F
+                  C8D88B11BB9076E1985AEA6AF41BE41E8C5CA4BD889EC061F23F4173DC3F4BF9
+                  8C55FD57B9C762B1582C168BC562B1582C168BC562F14351D1DFF2FB1B51E08D
+                  B5FC0000000049454E44AE426082}
+                FileName = 'D:\Dropbox\EraSoft\Guia\Mobile\Imagens\HabilitaViewSenha.png'
+              end>
+            Align = Right
+            Position.X = 268.000000000000000000
+            Size.Width = 32.000000000000000000
+            Size.Height = 32.000000000000000000
+            Size.PlatformDefault = False
+            OnClick = imgViewSenhaAtualClick
+            object FillRGBEffect2: TFillRGBEffect
+              Color = xFF006BD6
+            end
+          end
+        end
+      end
+      object Layout4: TLayout
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 140.000000000000000000
+        Size.Width = 300.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        object edtConfirmaSenha: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = VertCenter
+          TabOrder = 0
+          Password = True
+          Position.Y = 9.000000000000000000
+          Size.Width = 300.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          TextPrompt = 'Confirma Senha'
+          object imgViewConfirmaSenha: TImage
+            MultiResBitmap.Height = 64
+            MultiResBitmap.Width = 64
+            MultiResBitmap.LoadSize = 2
+            MultiResBitmap = <
+              item
+                Width = 64
+                Height = 64
+                PNG = {
+                  89504E470D0A1A0A0000000D4948445200000040000000400806000000AA6971
+                  DE000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                  051849444154785EED995B685C4518C7734FC4B844B2B6464483D87AA92DA878
+                  79B020F6410DE28BA918C56A2836EDE6B69BCD7BC8AB49767323C4C49A229660
+                  290A8297A722F549ACB626081204A917EA65B34812B4696EFEBE73BE5DB29274
+                  F7CCD9B582F383E9CCFCCFD973E6FBE6FB66E6A445168BC562B1582C168BC562
+                  B1582C96FF19C55A179C9191915B363636F6D3DC4BBDBBB8B8F84EEAE0FAFA7A
+                  359A1461A9A4A464896B09AE7D473D8736BBBABA7AB6ABABEB927B4B7E29A803
+                  8686861EC590260C6910835536421C42F5210E9B8E44229FBBAA7FF2EE80D1D1
+                  D16A067B9881B6F9357A3BC41944CA28CF3FDED6D6B6A4B2117973C0C0C0C075
+                  6565655D0CAA9B6E8DAB169C3F287D2B2B2BF16834FA972B79232F0E20D41B31
+                  3C4EF35657F9D7F989A8887476769ED67ECEF872407F7F7FB0BCBC7C1CE39F53
+                  E95A739AB11C6D6F6F9FD77E564AB4F64C3C1E7F04E3BFF261FC057E7B8C7217
+                  B35725656D6DED6EEA10D766DC5B3CD3C8DA735EC6A6FDAC1845C0F0F07013D5
+                  094A85237800232FB380B57774741CC7F80D9533E8E9E9290906834770C620DD
+                  4A57F5C415CAABBC63DAED6E8F670790EF61BC1C2B2D2DF5FC5B319EEA49B6B1
+                  B3BA68B6E28417D1EE95EB18FC0DD5C9402030D6DCDC7C99B3C3E3689FA07976
+                  02EFDAE0F911D26148A52DF16404331FA18AB93DEF60CC6B2C546FB255DE8E13
+                  3F46BAC7BD92893882C13FDDDADAFA230E973419D34B9EE159B2384A246D49CE
+                  0E181C1C7C85874D99CCBC7281D97820168B55B1767C497F4BE3538813A81E4C
+                  26932BB5B5B5E769EF732E78442281314B3ABCAD5206392D8218FF18039AF461
+                  7C11B3F886E4BC843DDDAB1A2F70EF1E4AA8B7B7779D774FA8EC191DF3A4D8E0
+                  2A996475C0D8D8D80E16AD533CA85C2553CEC83F182539BF99F73170078ED949
+                  FD816A295E927F4817E7B73EA8101B48A79BB49F26AB03F81019A7AA737BE660
+                  C4456D3A0B5E0A8C6E21477F0F8542BFD13EA2720AE7DE9A9A9AEF9D9E3FEA24
+                  0AB59DC6F81C902F580FD269451418A7582EE0E0756DA6C9EA0099212ADF9FA2
+                  4440BDD43C4F16B7349CE3253F77B233DCCC8235A9B203BF71EE5D5858B8C311
+                  FCF133EF3AAAED34591D20E149759022870B63C8C127B479526B07C2F259AEFD
+                  82B197683FA3B203EBCE3BDA3CA0B5295770FCF3DDDDDD09EDA7C939E438031C
+                  62864EF8D80966E6E7E7EFAFAFAFAF6046CF61EC1ED5B70487CC72CF43BA0D7E
+                  8D749F7BC51BB20DE2E09799C80CC7A7C8790D907D14E3A3DA35619F1C6FE584
+                  27879C7FA6C266D4F80606BD8CF1F26D6064BCC098C3DB192F789E4D8EA79DEC
+                  0C71C34858C6B0A738107D3A353555B5B8B8780C4DB63A67B5979C97B0A71E17
+                  E3893A491B39319A7C73C8018879EB1855694B8CC29945EB05C24A3E864C3E54
+                  C409E144223121871CD532908F219DF9018A67E36199083B84134F697F5B4CF3
+                  D9F91CC6C3F282DB5CC533330C7282D93E93DAE775B53F8083E43C609AF317F9
+                  FDC17038FC854A57C5D80102E9508B1172506A74956B0B637997F40C45A3D1A4
+                  4A59F1E58014FF813F89FD408990EFEFB9DDDCC98B0304F9BEE754172104BB49
+                  8D1B552E344966FDF540203024BB8B6A9EC89B0352F4F5F55D5F5959799881B5
+                  131505F9B338EBC61C8BF008EF79ABA5A5E54F958DC8BB0336C336F630551303
+                  6E60C0BB5DD50C22EB5B22EB239C3ACD367A4E65DF14D4019B89C5627518B09F
+                  C8D88B11BB9076E1985AEA6AF41BE41E8C5CA4BD889EC061F23F4173DC3F4BF9
+                  8C55FD57B9C762B1582C168BC562B1582C168BC562F14351D1DFF2FB1B51E08D
+                  B5FC0000000049454E44AE426082}
+                FileName = 'D:\Dropbox\EraSoft\Guia\Mobile\Imagens\HabilitaViewSenha.png'
+              end>
+            Align = Right
+            Position.X = 268.000000000000000000
+            Size.Width = 32.000000000000000000
+            Size.Height = 32.000000000000000000
+            Size.PlatformDefault = False
+            OnClick = imgViewConfirmaSenhaClick
+            object FillRGBEffect1: TFillRGBEffect
+              Color = xFF006BD6
+            end
+          end
+        end
+      end
+      object Layout5: TLayout
+        Align = Top
+        Margins.Left = 10.000000000000000000
+        Margins.Top = 20.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 10.000000000000000000
+        Position.Y = 90.000000000000000000
+        Size.Width = 300.000000000000000000
+        Size.Height = 50.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object edtNovaSenha: TEdit
+          Touch.InteractiveGestures = [LongTap, DoubleTap]
+          Align = VertCenter
+          TabOrder = 0
+          Password = True
+          Position.Y = 9.000000000000000000
+          Size.Width = 300.000000000000000000
+          Size.Height = 32.000000000000000000
+          Size.PlatformDefault = False
+          TextPrompt = 'Nova Senha'
+          object imgViewNovaSenha: TImage
+            MultiResBitmap.Height = 64
+            MultiResBitmap.Width = 64
+            MultiResBitmap.LoadSize = 2
+            MultiResBitmap = <
+              item
+                Width = 64
+                Height = 64
+                PNG = {
+                  89504E470D0A1A0A0000000D4948445200000040000000400806000000AA6971
+                  DE000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                  051849444154785EED995B685C4518C7734FC4B844B2B6464483D87AA92DA878
+                  79B020F6410DE28BA918C56A2836EDE6B69BCD7BC8AB49767323C4C49A229660
+                  290A8297A722F549ACB626081204A917EA65B34812B4696EFEBE73BE5DB29274
+                  F7CCD9B582F383E9CCFCCFD973E6FBE6FB66E6A445168BC562B1582C168BC562
+                  B1582C96FF19C55A179C9191915B363636F6D3DC4BBDBBB8B8F84EEAE0FAFA7A
+                  359A1461A9A4A464896B09AE7D473D8736BBBABA7AB6ABABEB927B4B7E29A803
+                  8686861EC590260C6910835536421C42F5210E9B8E44229FBBAA7FF2EE80D1D1
+                  D16A067B9881B6F9357A3BC41944CA28CF3FDED6D6B6A4B2117973C0C0C0C075
+                  6565655D0CAA9B6E8DAB169C3F287D2B2B2BF16834FA972B79232F0E20D41B31
+                  3C4EF35657F9D7F989A8887476769ED67ECEF872407F7F7FB0BCBC7C1CE39F53
+                  E95A739AB11C6D6F6F9FD77E564AB4F64C3C1E7F04E3BFF261FC057E7B8C7217
+                  B35725656D6DED6EEA10D766DC5B3CD3C8DA735EC6A6FDAC1845C0F0F07013D5
+                  094A85237800232FB380B57774741CC7F80D9533E8E9E9290906834770C620DD
+                  4A57F5C415CAABBC63DAED6E8F670790EF61BC1C2B2D2DF5FC5B319EEA49B6B1
+                  B3BA68B6E28417D1EE95EB18FC0DD5C9402030D6DCDC7C99B3C3E3689FA07976
+                  02EFDAE0F911D26148A52DF16404331FA18AB93DEF60CC6B2C546FB255DE8E13
+                  3F46BAC7BD92893882C13FDDDADAFA230E973419D34B9EE159B2384A246D49CE
+                  0E181C1C7C85874D99CCBC7281D97820168B55B1767C497F4BE3538813A81E4C
+                  26932BB5B5B5E769EF732E78442281314B3ABCAD5206392D8218FF18039AF461
+                  7C11B3F886E4BC843DDDAB1A2F70EF1E4AA8B7B7779D774FA8EC191DF3A4D8E0
+                  2A996475C0D8D8D80E16AD533CA85C2553CEC83F182539BF99F73170078ED949
+                  FD816A295E927F4817E7B73EA8101B48A79BB49F26AB03F81019A7AA737BE660
+                  C4456D3A0B5E0A8C6E21477F0F8542BFD13EA2720AE7DE9A9A9AEF9D9E3FEA24
+                  0AB59DC6F81C902F580FD269451418A7582EE0E0756DA6C9EA0099212ADF9FA2
+                  4440BDD43C4F16B7349CE3253F77B233DCCC8235A9B203BF71EE5D5858B8C311
+                  FCF133EF3AAAED34591D20E149759022870B63C8C127B479526B07C2F259AEFD
+                  82B197683FA3B203EBCE3BDA3CA0B5295770FCF3DDDDDD09EDA7C939E438031C
+                  62864EF8D80966E6E7E7EFAFAFAFAF6046CF61EC1ED5B70487CC72CF43BA0D7E
+                  8D749F7BC51BB20DE2E09799C80CC7A7C8790D907D14E3A3DA35619F1C6FE584
+                  27879C7FA6C266D4F80606BD8CF1F26D6064BCC098C3DB192F789E4D8EA79DEC
+                  0C71C34858C6B0A738107D3A353555B5B8B8780C4DB63A67B5979C97B0A71E17
+                  E3893A491B39319A7C73C8018879EB1855694B8CC29945EB05C24A3E864C3E54
+                  C409E144223121871CD532908F219DF9018A67E36199083B84134F697F5B4CF3
+                  D9F91CC6C3F282DB5CC533330C7282D93E93DAE775B53F8083E43C609AF317F9
+                  FDC17038FC854A57C5D80102E9508B1172506A74956B0B637997F40C45A3D1A4
+                  4A59F1E58014FF813F89FD408990EFEFB9DDDCC98B0304F9BEE754172104BB49
+                  8D1B552E344966FDF540203024BB8B6A9EC89B0352F4F5F55D5F5959799881B5
+                  131505F9B338EBC61C8BF008EF79ABA5A5E54F958DC8BB0336C336F630551303
+                  6E60C0BB5DD50C22EB5B22EB239C3ACD367A4E65DF14D4019B89C5627518B09F
+                  C8D88B11BB9076E1985AEA6AF41BE41E8C5CA4BD889EC061F23F4173DC3F4BF9
+                  8C55FD57B9C762B1582C168BC562B1582C168BC562F14351D1DFF2FB1B51E08D
+                  B5FC0000000049454E44AE426082}
+                FileName = 'D:\Dropbox\EraSoft\Guia\Mobile\Imagens\HabilitaViewSenha.png'
+              end>
+            Align = Right
+            Position.X = 268.000000000000000000
+            Size.Width = 32.000000000000000000
+            Size.Height = 32.000000000000000000
+            Size.PlatformDefault = False
+            OnClick = imgViewNovaSenhaClick
+            object FillRGBEffect3: TFillRGBEffect
+              Color = xFF006BD6
+            end
+          end
+        end
+      end
+      object Rectangle1: TRectangle
+        Align = Top
+        Fill.Color = xFF2F3B58
+        Margins.Left = 140.000000000000000000
+        Margins.Top = 10.000000000000000000
+        Margins.Right = 10.000000000000000000
+        Position.X = 140.000000000000000000
+        Position.Y = 200.000000000000000000
+        Size.Width = 170.000000000000000000
+        Size.Height = 39.000000000000000000
+        Size.PlatformDefault = False
+        Stroke.Kind = None
+        object Label2: TLabel
+          Align = Client
+          StyledSettings = [Family, Style]
+          HitTest = True
+          Size.Width = 170.000000000000000000
+          Size.Height = 39.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 13.000000000000000000
+          TextSettings.FontColor = claWhite
+          TextSettings.HorzAlign = Center
+          Text = 'Salvar'
+          TabOrder = 0
+          OnClick = Label2Click
+        end
+      end
+    end
+  end
+  object recModal: TRectangle
+    Align = Contents
+    Fill.Color = x00FFFFFF
+    Size.Width = 320.000000000000000000
+    Size.Height = 617.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    Visible = False
+    object recAviso: TRectangle
+      Align = Center
+      Fill.Color = claWhite
+      Size.Width = 302.000000000000000000
+      Size.Height = 190.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+      XRadius = 10.000000000000000000
+      YRadius = 10.000000000000000000
+      object ShadowEffect11: TShadowEffect
+        Distance = 3.000000000000000000
+        Direction = 45.000000000000000000
+        Softness = 0.300000011920929000
+        Opacity = 0.600000023841857900
+        ShadowColor = claBlack
+      end
+      object Layout84: TLayout
+        Align = Left
+        Size.Width = 53.000000000000000000
+        Size.Height = 190.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object Image1: TImage
+          MultiResBitmap.Height = 32
+          MultiResBitmap.Width = 32
+          MultiResBitmap = <
+            item
+              Width = 32
+              Height = 32
+              PNG = {
+                89504E470D0A1A0A0000000D4948445200000020000000200806000000737A7A
+                F4000000017352474200AECE1CE90000000467414D410000B18F0BFC61050000
+                02BB494441545847ED955F4814411CC767F7FE6565049A9945291144500F0996
+                0A95201415423D86F520FA603D1AD763040911244965051908E54304D14B2F3E
+                0846147909FE4B39FAE79DA9E59527E79FF3F6E637CD795FCD65EFF6F64283C8
+                0F0CF3FDECDDDEFC6E766696ADF2CF22C47D07EF3950AF7566F453FFF11DB8FC
+                F7E0DD7B9AC52B59876CDFDAD91C2EA78D8A3E2D68FC41A63AF5BE0ACA729CCC
+                C97BF6DD86A6C51F15203E5C7C86B8C844A8B75A7CBE9E0BB54CDA0588811385
+                3E0A1E862E92C5848B82F76E412DA3A0B78CF636C36BD76677418DEC6DDFA46C
+                280BC05292D60C90CF7DD474704974A0BC03D112691530F7B5A115313E77B1BB
+                171AB8FA82EFA6DEA232684A2C3F02EACAAB5566479AA08C15FA19736D83483C
+                F2A722F118511CA3AE122D2F6EE6589E81D1E19146C43802A32D20D04B9C42DB
+                42DE9A3350532C15C0BBF7B7E4653107340E0F21008E1E0C8D37B790B7D1054D
+                4ACA0268AC7573C7CFAE4AE86FA2E60B3D9F919D85EFBAA149495980F05F6A3A
+                E24CF03D1E4648CE4C68D02DC465D3314C3F24DF8D0C5FC45F01D543410440E8
+                97B08EB1F5BCEBA6E9B6342D40F3D57DCA67CC0ED543D6DE3FB6F064297DA92B
+                801A48BA0DA9EF508532D9F11C6A44B5C9BBD740E416E033C846B823FB8DBD28
+                500CD591700662CF2D3AF1EE0E343124973D9F464B3E780C9B16384843E77642
+                75242EC0FBB1D2A14E2F39651250D0C05889FCE7B1569C7A41F2E1C76D883A0C
+                05088FC7A1041EB5409363DB882051526E77B9907801F5979D852E622880D4D3
+                D710979D48F06583E87BE284CEA32B8006AA3243DF7DB5507366BA199BEE8CB7
+                A9D7B8688E8B45B385FAF002741EDD2EE09EDC36756EAC1CBA22FC902FD5EC52
+                B6B07DF433B0D283C7C89213418327ABA1FA02A2CEB55EC4154571153E45341E
+                443478ECBC12F66F872E2B246C5CCD3955AF6CBD627E70ACF21FC1D82F3838F2
+                08A72F4E510000000049454E44AE426082}
+              FileName = 'D:\Dropbox\Souza\Android\AlvoLeste\Imagens\Icones\erro.png'
+            end>
+          Align = Client
+          Size.Width = 53.000000000000000000
+          Size.Height = 190.000000000000000000
+          Size.PlatformDefault = False
+          WrapMode = Center
+        end
+      end
+      object Layout86: TLayout
+        Align = Client
+        Size.Width = 249.000000000000000000
+        Size.Height = 190.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        object Layout88: TLayout
+          Align = Bottom
+          Position.Y = 140.000000000000000000
+          Size.Width = 249.000000000000000000
+          Size.Height = 50.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 2
+          object Label4: TLabel
+            Align = Client
+            StyledSettings = [Family, Size, Style]
+            HitTest = True
+            Size.Width = 249.000000000000000000
+            Size.Height = 50.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.FontColor = xFF357AFF
+            TextSettings.HorzAlign = Center
+            Text = 'OK'
+            TabOrder = 1
+            OnClick = Label4Click
+          end
+        end
+        object lblMsgBox: TLabel
+          Align = Client
+          StyledSettings = [Family, Style]
+          Margins.Left = 10.000000000000000000
+          Margins.Right = 10.000000000000000000
+          Size.Width = 229.000000000000000000
+          Size.Height = 95.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.FontColor = xFF515151
+          TabOrder = 1
+        end
+        object Layout90: TLayout
+          Align = Top
+          Size.Width = 249.000000000000000000
+          Size.Height = 45.000000000000000000
+          Size.PlatformDefault = False
+          TabOrder = 3
+          object Label7: TLabel
+            Align = Client
+            StyledSettings = [Family, Size, Style]
+            Margins.Left = 10.000000000000000000
+            Margins.Right = 10.000000000000000000
+            Margins.Bottom = 10.000000000000000000
+            Size.Width = 229.000000000000000000
+            Size.Height = 33.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.FontColor = xFF515151
+            TextSettings.VertAlign = Trailing
+            Text = 'Guia Alvo'
+            TabOrder = 1
+          end
+          object Line13: TLine
+            Align = Bottom
+            LineType = Bottom
+            Position.Y = 43.000000000000000000
+            Size.Width = 249.000000000000000000
+            Size.Height = 2.000000000000000000
+            Size.PlatformDefault = False
+            Stroke.Color = claLightgray
+          end
+        end
+      end
+    end
+  end
+end
