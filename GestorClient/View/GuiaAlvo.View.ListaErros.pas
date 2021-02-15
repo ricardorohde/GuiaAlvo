@@ -46,6 +46,9 @@ end;
 procedure TfrmListaErros.sbtnProximoClick(Sender: TObject);
 begin
      frmCadastroNovo.tbcNovoCadastro.ActiveTab := frmCadastroNovo.tbiDadosBasicos;
+     frmCadastroNovo.lcStatusTab := 0;
+     frmCadastroNovo.lblProgresso.Text := 'Etapa 1 de 5';
+     frmCadastroNovo.sbtnProximo.Text  := 'Próximo >';
      Close;
 end;
 

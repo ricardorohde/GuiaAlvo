@@ -19,6 +19,6 @@
     <Transaction>2021/02/13 21:10:29.000.145,E:\MSSoftware\Projetos\GuiaAlvo\trunk\GestorClient\Model\GuiaAlvo.Controller.DataModuleDados.pas=E:\MSSoftware\Projetos\GuiaAlvo\trunk\GestorClient\Model\GuiaAlvo.Model.DataModuleDados.pas</Transaction>
   </Transactions>
 	<ActiveMobileDevice>
-		<NoProfile iOSSimulator="iPhone5" Android="0048627021" Android64="0048627021"/>
+		<NoProfile iOSSimulator="iPhone5" Android="" Android64=""/>
 	</ActiveMobileDevice>
 </BorlandProject>

@@ -163,12 +163,12 @@ type
     procedure LimpaCorForm;
     { Private declarations }
   public
+    lcStatusTab : Integer;
     { Public declarations }
   end;
 
 var
   frmCadastroNovo: TfrmCadastroNovo;
-  lcStatusTab : Integer = 0;
   lcResultListaValidaCampos : TStringList;
   lcSalvo : Boolean = False;
 implementation
@@ -498,6 +498,7 @@ procedure TfrmCadastroNovo.FormCreate(Sender: TObject);
 begin
 
   tbcNovoCadastro.TabIndex := 0;
+  lcStatusTab := 0;
   getControle;
 
 end;
