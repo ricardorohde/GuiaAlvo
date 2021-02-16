@@ -35,12 +35,25 @@ function gravaRedesSociais(AFace, AInsta, ATwitter, AYouTube, AGPlus,
                             ASite, AEmail, AGPlay, AStore : String) : Boolean;
 function gravaCadastroAvaliacoes(AAmbiente, AAtendimento, ALimpeza, ALocal, APreco : Boolean) : Boolean;
 function gravaDelivery(AUber, ARappi, AIfood: String) : Boolean;
+procedure gravaSobre(ASobre, ASlogam, ATag : String);
+function podeAlterarAvaliacao : Boolean;
+
 
 
 implementation
 
 uses
   FMX.Platform.Win, Winapi.Windows, GuiaAlvo.View.Login, GuiaAlvo.View.Principal, GuiaAlvo.Model.RedesSociais;
+
+function podeAlterarAvaliacao : Boolean;
+begin
+     Result := ModelClientModule.ServerMethodsClient.podeAlterarAvaliacao(cfgIdComercio);
+end;
+
+procedure gravaSobre(ASobre, ASlogam, ATag : String);
+begin
+    ModelClientModule.ServerMethodsClient.gravaSobre(cfgIdComercio, ASobre, ASlogam, ATag);
+end;
 
 function gravaDelivery(AUber, ARappi, AIfood: String) : Boolean;
 begin

@@ -16,6 +16,7 @@ object WM: TWM
   object DSHTTPWebDispatcher1: TDSHTTPWebDispatcher
     Server = DSServer1
     Filters = <>
+    SessionTimeout = 0
     WebDispatch.PathInfo = 'datasnap*'
     Left = 96
     Top = 75

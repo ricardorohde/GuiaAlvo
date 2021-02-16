@@ -342,36 +342,6 @@ type
     Image33: TImage;
     Label66: TLabel;
     Label67: TLabel;
-    chkAmbiente: TImage;
-    Layout42: TLayout;
-    Layout43: TLayout;
-    Layout44: TLayout;
-    Label68: TLabel;
-    Label69: TLabel;
-    Layout45: TLayout;
-    Layout48: TLayout;
-    chkPrecos: TImage;
-    Label70: TLabel;
-    Layout49: TLayout;
-    Label71: TLabel;
-    Layout50: TLayout;
-    Layout51: TLayout;
-    chkLocalizacao: TImage;
-    Label72: TLabel;
-    Layout52: TLayout;
-    Label73: TLabel;
-    Layout53: TLayout;
-    Layout54: TLayout;
-    chkLimpeza: TImage;
-    Label74: TLabel;
-    Layout55: TLayout;
-    Label75: TLabel;
-    Layout57: TLayout;
-    Layout58: TLayout;
-    chkAtendimento: TImage;
-    Label76: TLabel;
-    Layout59: TLayout;
-    Label77: TLabel;
     Layout60: TLayout;
     recMenuTopo1: TRectangle;
     imgMenu1: TImage;
@@ -631,6 +601,34 @@ type
     imgStatusSobre: TImage;
     imgStatusAvaliacao: TImage;
     imgUpdate: TImage;
+    FlowLayout1: TFlowLayout;
+    Layout43: TLayout;
+    chkAmbiente: TImage;
+    Label68: TLabel;
+    Layout44: TLayout;
+    Label69: TLabel;
+    Layout58: TLayout;
+    chkAtendimento: TImage;
+    Label76: TLabel;
+    Layout59: TLayout;
+    Label77: TLabel;
+    Layout54: TLayout;
+    chkLimpeza: TImage;
+    Label74: TLabel;
+    Layout55: TLayout;
+    Label75: TLabel;
+    Layout51: TLayout;
+    chkLocalizacao: TImage;
+    Label72: TLabel;
+    Layout52: TLayout;
+    Label73: TLabel;
+    Layout48: TLayout;
+    chkPrecos: TImage;
+    Label70: TLabel;
+    Layout49: TLayout;
+    Label71: TLabel;
+    Label115: TLabel;
+    imgAvaliacaoBloqueada: TImage;
     procedure edtLinkFacebookKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure edtLinkInstagranKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure edtLinkTwitterKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
@@ -700,6 +698,8 @@ type
     procedure recSalvarRedesSociaisClick(Sender: TObject);
     procedure recSalvarDeliveryClick(Sender: TObject);
     procedure lstvTelefonesPainting(Sender: TObject; Canvas: TCanvas; const ARect: TRectF);
+    procedure Rectangle45Click(Sender: TObject);
+    procedure Rectangle53Click(Sender: TObject);
   private
     FControllerRedes : TControllerRedesSociais;
 
@@ -1253,8 +1253,11 @@ procedure TfrmGestorClient.chkAtendimentoClick(Sender: TObject);
 begin
 
     if cfgAlteraAvaliacao = True then
-        IsImageChecked(TImage(Sender));
-
+        IsImageChecked(TImage(Sender)) else
+        MessageBox(WindowHandleToPlatform(Self.Handle).Wnd,
+                   'Você não pode mais mudar as avaliações pois ' +
+                   'ja existe(m) avaliação(ões) registrada!',
+                   'GuiaAlvo Alvo', MB_OK + MB_ICONEXCLAMATION);
 end;
 
 procedure TfrmGestorClient.chkFechadoSegClick(Sender: TObject);
@@ -1523,7 +1526,8 @@ procedure TfrmGestorClient.FormCreate(Sender: TObject);
 begin
 
     LoadStart;
-
+    cfgAlteraAvaliacao := podeAlterarAvaliacao;
+    imgAvaliacaoBloqueada.Visible := not cfgAlteraAvaliacao;
 end;
 
 procedure TfrmGestorClient.LoadStart;
@@ -2238,6 +2242,27 @@ begin
         end;
 end;
 
+procedure TfrmGestorClient.Rectangle45Click(Sender: TObject);
+var
+AIndex : Integer;
+ATag : String;
+begin
+
+    try
+        for AIndex := 0 to mmTag.Items.Count - 1 do
+            ATag := ATag + ';' + mmTag.Items[AIndex].Text;
+
+        gravaSobre(mmDescricao.Text, edtSlogam.Text, ATag);
+
+        MessageBox(WindowHandleToPlatform(Self.Handle).Wnd,
+                   'Informações salva com sucesso.', 'GuiaAlvo',
+                   MB_OK + MB_ICONINFORMATION);
+    Except
+
+    end;
+
+end;
+
 procedure TfrmGestorClient.Rectangle49Click(Sender: TObject);
 var
 ASolicitacoes : Integer;
@@ -2359,6 +2384,38 @@ begin
      recAddGrupo.Visible:= False;
      recModal.Visible := False;
 
+end;
+
+procedure TfrmGestorClient.Rectangle53Click(Sender: TObject);
+var
+AErro : Boolean;
+begin
+     AErro := False;
+
+     if (chkAmbiente.Tag    = 1) or (chkAtendimento.Tag = 1) or
+        (chkLimpeza.Tag     = 1) or (chkLocalizacao.Tag = 1) or
+        (chkPrecos.Tag      = 1) then
+        AErro := False else
+        AErro := True;
+
+    case AErro of
+        True : begin
+                   MessageBox(WindowHandleToPlatform(Self.Handle).Wnd,
+                             'Para salvar é necessário selecionar pelo menos um dos tipos de avaliação!',
+                             'Guia Alvo', MB_ICONWARNING);
+                   Exit;
+               end;
+       False : begin
+                   gravaCadastroAvaliacoes(StrToBoolValue(chkAmbiente.Tag.ToString,    '1', '0'),
+                                           StrToBoolValue(chkAtendimento.Tag.ToString, '1', '0'),
+                                           StrToBoolValue(chkLimpeza.Tag.ToString,     '1', '0'),
+                                           StrToBoolValue(chkLocalizacao.Tag.ToString, '1', '0'),
+                                           StrToBoolValue(chkPrecos.Tag.ToString,      '1', '0'));
+                   MessageBox(WIndowHandleToPlatForm(Self.Handle).Wnd,
+                             'Lista de avaliações salva com sucesso!',
+                             'Guia Alvo', MB_OK + MB_ICONINFORMATION);
+               end;
+    end;
 end;
 
 procedure TfrmGestorClient.Rectangle54Click(Sender: TObject);

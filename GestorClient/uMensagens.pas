@@ -60,6 +60,8 @@ MSG_QTDE_LIMITE_IMAGES  : String = 'Você já adicionou o numero permitido de imag
 
 
 
+
+
 implementation
 
 end.

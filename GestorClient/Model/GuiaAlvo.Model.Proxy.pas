@@ -1,6 +1,6 @@
 //
 // Created by the DataSnap proxy generator.
-// 13/02/2021 21:15:58
+// 15/02/2021 21:21:28
 //
 
 unit GuiaAlvo.Model.Proxy;
@@ -16,6 +16,7 @@ type
   TServerMethodsClient = class(TDSAdminRestClient)
   private
     FDataModuleCreateCommand: TDSRestCommand;
+    FgravaSobreCommand: TDSRestCommand;
     FListaPlanosCommand: TDSRestCommand;
     FListaPlanosCommand_Cache: TDSRestCommand;
     FgravaDeliveryCommand: TDSRestCommand;
@@ -105,11 +106,13 @@ type
     FLoadGrupoSelectedCommand: TDSRestCommand;
     FInsertCategoriaCommand: TDSRestCommand;
     FSolicitacoesNovaCategoriaCommand: TDSRestCommand;
+    FpodeAlterarAvaliacaoCommand: TDSRestCommand;
   public
     constructor Create(ARestConnection: TDSRestConnection); overload;
     constructor Create(ARestConnection: TDSRestConnection; AInstanceOwner: Boolean); overload;
     destructor Destroy; override;
     procedure DataModuleCreate(Sender: TObject);
+    procedure gravaSobre(AIdComercio: Integer; ASobre: string; ASlogem: string; ATag: string);
     function ListaPlanos(const ARequestFilter: string = ''): TFDJSONDataSets;
     function ListaPlanos_Cache(const ARequestFilter: string = ''): IDSRestCachedTFDJSONDataSets;
     function gravaDelivery(AIdCom: Integer; AUber: string; ARappi: string; AIfood: string; const ARequestFilter: string = ''): Boolean;
@@ -199,6 +202,7 @@ type
     function LoadGrupoSelected(AIdCom: Integer; const ARequestFilter: string = ''): Integer;
     procedure InsertCategoria(ACategoria: string; ADescricao: string; AIdCom: Integer);
     function SolicitacoesNovaCategoria(AIdCom: Integer; const ARequestFilter: string = ''): Integer;
+    function podeAlterarAvaliacao(AIdComercio: Integer; const ARequestFilter: string = ''): Boolean;
   end;
 
   IDSRestCachedTFDJSONDataSets = interface(IDSRestCachedObject<TFDJSONDataSets>)
@@ -211,6 +215,14 @@ const
   TServerMethods_DataModuleCreate: array [0..0] of TDSRestParameterMetaData =
   (
     (Name: 'Sender'; Direction: 1; DBXType: 37; TypeName: 'TObject')
+  );
+
+  TServerMethods_gravaSobre: array [0..3] of TDSRestParameterMetaData =
+  (
+    (Name: 'AIdComercio'; Direction: 1; DBXType: 6; TypeName: 'Integer'),
+    (Name: 'ASobre'; Direction: 1; DBXType: 26; TypeName: 'string'),
+    (Name: 'ASlogem'; Direction: 1; DBXType: 26; TypeName: 'string'),
+    (Name: 'ATag'; Direction: 1; DBXType: 26; TypeName: 'string')
   );
 
   TServerMethods_ListaPlanos: array [0..0] of TDSRestParameterMetaData =
@@ -836,6 +848,12 @@ const
     (Name: ''; Direction: 4; DBXType: 6; TypeName: 'Integer')
   );
 
+  TServerMethods_podeAlterarAvaliacao: array [0..1] of TDSRestParameterMetaData =
+  (
+    (Name: 'AIdComercio'; Direction: 1; DBXType: 6; TypeName: 'Integer'),
+    (Name: ''; Direction: 4; DBXType: 4; TypeName: 'Boolean')
+  );
+
 implementation
 
 procedure TServerMethodsClient.DataModuleCreate(Sender: TObject);
@@ -861,6 +879,22 @@ begin
     end
     end;
   FDataModuleCreateCommand.Execute;
+end;
+
+procedure TServerMethodsClient.gravaSobre(AIdComercio: Integer; ASobre: string; ASlogem: string; ATag: string);
+begin
+  if FgravaSobreCommand = nil then
+  begin
+    FgravaSobreCommand := FConnection.CreateCommand;
+    FgravaSobreCommand.RequestType := 'GET';
+    FgravaSobreCommand.Text := 'TServerMethods.gravaSobre';
+    FgravaSobreCommand.Prepare(TServerMethods_gravaSobre);
+  end;
+  FgravaSobreCommand.Parameters[0].Value.SetInt32(AIdComercio);
+  FgravaSobreCommand.Parameters[1].Value.SetWideString(ASobre);
+  FgravaSobreCommand.Parameters[2].Value.SetWideString(ASlogem);
+  FgravaSobreCommand.Parameters[3].Value.SetWideString(ATag);
+  FgravaSobreCommand.Execute;
 end;
 
 function TServerMethodsClient.ListaPlanos(const ARequestFilter: string): TFDJSONDataSets;
@@ -2522,6 +2556,20 @@ begin
   Result := FSolicitacoesNovaCategoriaCommand.Parameters[1].Value.GetInt32;
 end;
 
+function TServerMethodsClient.podeAlterarAvaliacao(AIdComercio: Integer; const ARequestFilter: string): Boolean;
+begin
+  if FpodeAlterarAvaliacaoCommand = nil then
+  begin
+    FpodeAlterarAvaliacaoCommand := FConnection.CreateCommand;
+    FpodeAlterarAvaliacaoCommand.RequestType := 'GET';
+    FpodeAlterarAvaliacaoCommand.Text := 'TServerMethods.podeAlterarAvaliacao';
+    FpodeAlterarAvaliacaoCommand.Prepare(TServerMethods_podeAlterarAvaliacao);
+  end;
+  FpodeAlterarAvaliacaoCommand.Parameters[0].Value.SetInt32(AIdComercio);
+  FpodeAlterarAvaliacaoCommand.Execute(ARequestFilter);
+  Result := FpodeAlterarAvaliacaoCommand.Parameters[1].Value.GetBoolean;
+end;
+
 constructor TServerMethodsClient.Create(ARestConnection: TDSRestConnection);
 begin
   inherited Create(ARestConnection);
@@ -2535,6 +2583,7 @@ end;
 destructor TServerMethodsClient.Destroy;
 begin
   FDataModuleCreateCommand.DisposeOf;
+  FgravaSobreCommand.DisposeOf;
   FListaPlanosCommand.DisposeOf;
   FListaPlanosCommand_Cache.DisposeOf;
   FgravaDeliveryCommand.DisposeOf;
@@ -2624,6 +2673,7 @@ begin
   FLoadGrupoSelectedCommand.DisposeOf;
   FInsertCategoriaCommand.DisposeOf;
   FSolicitacoesNovaCategoriaCommand.DisposeOf;
+  FpodeAlterarAvaliacaoCommand.DisposeOf;
   inherited;
 end;
 

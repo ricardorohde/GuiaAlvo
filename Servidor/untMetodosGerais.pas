@@ -45,6 +45,7 @@ type
 
     { Private declarations }
   public
+    procedure gravaSobre(AIdComercio : Integer; ASobre, ASlogem, ATag: String);
     function ListaPlanos: TFDJSONDataSets;
     function gravaDelivery(AIdCom: Integer; AUber, ARappi, AIfood: String) : Boolean;
     function gravaRedesSociais(AIdCom : Integer; AFace, AInsta, ATwitter, AYouTube, AGPlus,
@@ -114,6 +115,8 @@ type
     procedure InsertCategoria(ACategoria, ADescricao : String; AIdCom : Integer);
     function SolicitacoesNovaCategoria(AIdCom : Integer) : Integer;
 
+    function podeAlterarAvaliacao(AIdComercio : Integer) : Boolean;
+
   end;
 {$METHODINFO OFF}
 
@@ -125,6 +128,18 @@ lcPosComercio : TMapCoordinate;
 lcIDCom : Integer;
 
 {$R *.dfm}
+
+function TServerMethods.podeAlterarAvaliacao(AIdComercio : Integer) : Boolean;
+begin
+
+     fdqryGeral.Close;
+     fdqryGeral.SQL.Clear;
+     fdqryGeral.Open('SELECT * FROM ALAVALIA WHERE IDCOM_AVALIA = ' + AIdComercio.ToString);
+     if fdqryGeral.RecordCount > 0 then
+        Result := False else
+        Result := True;
+
+end;
 
 function TServerMethods.ListaPlanos : TFDJSONDataSets;
 begin
@@ -143,6 +158,24 @@ begin
      finally
          fdqryGeral.Close;
      end;
+
+end;
+
+procedure TServerMethods.gravaSobre(AIdComercio : Integer;ASobre, ASlogem, ATag : String);
+begin
+
+   fdqryGeral.Close;
+   fdqryGeral.SQL.Clear;
+   fdqryGeral.SQL.Add('INSERT INTO ALCOMERCIO SET');
+   fdqryGeral.SQL.Add('SLOGAMCOM   = :SLOGAMCOM,');
+   fdqryGeral.SQL.Add('SOBRECOM    = :SOBRECOM,');
+   fdqryGeral.SQL.Add('TAGCOM      = :TAGCOM');
+   fdqryGeral.SQL.Add('WHERE IDCOM = :IDCOM');
+   fdqryGeral.ParamByName('SLOGAMCOM').AsString  := ASlogem;
+   fdqryGeral.ParamByName('SOBRECOM' ).AsString  := ASobre;
+   fdqryGeral.ParamByName('TAGCOM'   ).AsString  := ATag;
+   fdqryGeral.ParamByName('IDCOM'    ).AsInteger := AIdComercio;
+   fdqryGeral.ExecSQL;
 
 end;
 
