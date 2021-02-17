@@ -58,8 +58,11 @@ MSG_QTDE_LIMITE_IMAGES  : String = 'Você já adicionou o numero permitido de imag
                                    'imagem para adicionar a imagem nova ou migre para um plano superior.'+#13#13+
                                    'Deseja mudar de plano agora?';
 
-
-
+ERRO_UPDATE_HORARIOS    : String = 'Não foi possivel salvar o horário de funcionamento, tente novamente.' + #13 +
+                                   'Caso o problema continue, reinicie o programa e tente novamente, mas se mesmo assim ' +
+                                   'o problema persistir envie-nos um e-mail para suporte@guiaalvo.com.br nos informando os dados abaixo' + #13#13 +
+                                   'Erro: 0x0000120U - ERRO_UPDATE_DELIVERY' + #13#13 +
+                                   '%s';
 
 
 implementation

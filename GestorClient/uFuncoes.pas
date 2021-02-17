@@ -23,6 +23,8 @@ procedure ReplicaHoras(Sender: TObject);
 function PreencheHoras : Boolean;
 function SizeImgPx(fImagem : String) : String;
 function RemoveAcento(const pText: string): string;
+function ValidaHoras(AForm : TForm) : Boolean;
+function geraHoraBD(ASemana : String; AForm : TForm) : String;
 
 const
 
@@ -39,6 +41,20 @@ implementation
 uses
   System.Classes, System.Types, System.SysUtils, FMX.StdCtrls, FMX.Ani,
   System.UITypes, FMX.Graphics, GuiaAlvo.View.Principal;
+
+function geraHoraBD(ASemana : String; AForm : TForm) : String;
+var
+i : Integer;
+ARes : String;
+begin
+
+    for i := 1 to 4 do
+        ARes := ARes + FormatDateTime('hh:mm', TTimeEdit(AForm.FindComponent(smStatusHr[i] + ASemana)).Time);
+
+    ARes := ARes + TImage(AForm.FindComponent(smStatusHr[5] + ASemana)).Tag.ToString;
+
+    Result := ARes;
+end;
 
 function RemoveAcento(const pText: string): string;
 type
@@ -144,6 +160,34 @@ begin
     for i := 1 to 6 do
         TTimeEdit(frmGestorClient.FindComponent('edt' + ACampo + ASem[i])).Time := AValor;
 
+end;
+
+function ValidaHoras(AForm : TForm) : Boolean;
+var
+i, j : Integer;
+ACampo : String;
+AAbre, APara, AVolta, AFecha : TTime;
+AFechado : Integer;
+ARes : Boolean;
+begin
+
+    ARes   := True;
+    ACampo := 'HR%sCOM';
+
+    for i := 1 to 7 do
+        begin
+            AAbre    := TTimeEdit(AForm.FindComponent(smStatusHr[1] + smSemana[i])).Time;
+            APara    := TTimeEdit(AForm.FindComponent(smStatusHr[2] + smSemana[i])).Time;
+            AVolta   := TTimeEdit(AForm.FindComponent(smStatusHr[3] + smSemana[i])).Time;
+            AFecha   := TTimeEdit(AForm.FindComponent(smStatusHr[4] + smSemana[i])).Time;
+
+            AFechado := TImage(AForm.FindComponent(smStatusHr[5] + smSemana[i])).Tag;
+
+            if AFechado = 0 then
+                if (APara < AAbre) or (AVolta < APara) then
+                    ARes := False;
+        end;
+    Result := ARes;
 end;
 
 procedure IsImageChecked(AChkImage : TImage); 

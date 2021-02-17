@@ -37,6 +37,7 @@ function gravaCadastroAvaliacoes(AAmbiente, AAtendimento, ALimpeza, ALocal, APre
 function gravaDelivery(AUber, ARappi, AIfood: String) : Boolean;
 procedure gravaSobre(ASobre, ASlogam, ATag : String);
 function podeAlterarAvaliacao : Boolean;
+procedure salvaFuncionamento(AIDCom : Integer; ASeg, Ater, AQua, AQui, ASex, ASab, ADom : String);
 
 
 
@@ -44,6 +45,11 @@ implementation
 
 uses
   FMX.Platform.Win, Winapi.Windows, GuiaAlvo.View.Login, GuiaAlvo.View.Principal, GuiaAlvo.Model.RedesSociais;
+
+procedure salvaFuncionamento(AIDCom : Integer; ASeg, Ater, AQua, AQui, ASex, ASab, ADom : String);
+begin
+    ModelClientModule.ServerMethodsClient.salvaFuncionamento(AIDCom, ASeg, Ater, AQua, AQui, ASex, ASab, ADom);
+end;
 
 function podeAlterarAvaliacao : Boolean;
 begin

@@ -1,6 +1,6 @@
 //
 // Created by the DataSnap proxy generator.
-// 15/02/2021 21:21:28
+// 16/02/2021 19:34:42
 //
 
 unit GuiaAlvo.Model.Proxy;
@@ -107,6 +107,7 @@ type
     FInsertCategoriaCommand: TDSRestCommand;
     FSolicitacoesNovaCategoriaCommand: TDSRestCommand;
     FpodeAlterarAvaliacaoCommand: TDSRestCommand;
+    FsalvaFuncionamentoCommand: TDSRestCommand;
   public
     constructor Create(ARestConnection: TDSRestConnection); overload;
     constructor Create(ARestConnection: TDSRestConnection; AInstanceOwner: Boolean); overload;
@@ -203,6 +204,7 @@ type
     procedure InsertCategoria(ACategoria: string; ADescricao: string; AIdCom: Integer);
     function SolicitacoesNovaCategoria(AIdCom: Integer; const ARequestFilter: string = ''): Integer;
     function podeAlterarAvaliacao(AIdComercio: Integer; const ARequestFilter: string = ''): Boolean;
+    procedure salvaFuncionamento(AIDCom: Integer; ASeg: string; Ater: string; AQua: string; AQui: string; ASex: string; ASab: string; ADom: string);
   end;
 
   IDSRestCachedTFDJSONDataSets = interface(IDSRestCachedObject<TFDJSONDataSets>)
@@ -852,6 +854,18 @@ const
   (
     (Name: 'AIdComercio'; Direction: 1; DBXType: 6; TypeName: 'Integer'),
     (Name: ''; Direction: 4; DBXType: 4; TypeName: 'Boolean')
+  );
+
+  TServerMethods_salvaFuncionamento: array [0..7] of TDSRestParameterMetaData =
+  (
+    (Name: 'AIDCom'; Direction: 1; DBXType: 6; TypeName: 'Integer'),
+    (Name: 'ASeg'; Direction: 1; DBXType: 26; TypeName: 'string'),
+    (Name: 'Ater'; Direction: 1; DBXType: 26; TypeName: 'string'),
+    (Name: 'AQua'; Direction: 1; DBXType: 26; TypeName: 'string'),
+    (Name: 'AQui'; Direction: 1; DBXType: 26; TypeName: 'string'),
+    (Name: 'ASex'; Direction: 1; DBXType: 26; TypeName: 'string'),
+    (Name: 'ASab'; Direction: 1; DBXType: 26; TypeName: 'string'),
+    (Name: 'ADom'; Direction: 1; DBXType: 26; TypeName: 'string')
   );
 
 implementation
@@ -2570,6 +2584,26 @@ begin
   Result := FpodeAlterarAvaliacaoCommand.Parameters[1].Value.GetBoolean;
 end;
 
+procedure TServerMethodsClient.salvaFuncionamento(AIDCom: Integer; ASeg: string; Ater: string; AQua: string; AQui: string; ASex: string; ASab: string; ADom: string);
+begin
+  if FsalvaFuncionamentoCommand = nil then
+  begin
+    FsalvaFuncionamentoCommand := FConnection.CreateCommand;
+    FsalvaFuncionamentoCommand.RequestType := 'GET';
+    FsalvaFuncionamentoCommand.Text := 'TServerMethods.salvaFuncionamento';
+    FsalvaFuncionamentoCommand.Prepare(TServerMethods_salvaFuncionamento);
+  end;
+  FsalvaFuncionamentoCommand.Parameters[0].Value.SetInt32(AIDCom);
+  FsalvaFuncionamentoCommand.Parameters[1].Value.SetWideString(ASeg);
+  FsalvaFuncionamentoCommand.Parameters[2].Value.SetWideString(Ater);
+  FsalvaFuncionamentoCommand.Parameters[3].Value.SetWideString(AQua);
+  FsalvaFuncionamentoCommand.Parameters[4].Value.SetWideString(AQui);
+  FsalvaFuncionamentoCommand.Parameters[5].Value.SetWideString(ASex);
+  FsalvaFuncionamentoCommand.Parameters[6].Value.SetWideString(ASab);
+  FsalvaFuncionamentoCommand.Parameters[7].Value.SetWideString(ADom);
+  FsalvaFuncionamentoCommand.Execute;
+end;
+
 constructor TServerMethodsClient.Create(ARestConnection: TDSRestConnection);
 begin
   inherited Create(ARestConnection);
@@ -2674,6 +2708,7 @@ begin
   FInsertCategoriaCommand.DisposeOf;
   FSolicitacoesNovaCategoriaCommand.DisposeOf;
   FpodeAlterarAvaliacaoCommand.DisposeOf;
+  FsalvaFuncionamentoCommand.DisposeOf;
   inherited;
 end;
 

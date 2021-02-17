@@ -175,7 +175,7 @@ implementation
 
 {$R *.fmx}
 
-uses Winapi.Windows, FMX.Platform.win, System.JSON, Winapi.ShellAPI, GuiaAlvo.View.ListaErros;
+uses IniFiles, Winapi.Windows, FMX.Platform.win, System.JSON, Winapi.ShellAPI, GuiaAlvo.View.ListaErros;
 
 function ExtraiJSonErro(AJSon : String) : TListaErros;
 var

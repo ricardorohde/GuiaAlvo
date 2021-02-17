@@ -101,7 +101,6 @@ type
     Layout29: TLayout;
     Label15: TLabel;
     lytView: TLayout;
-    Layout31: TLayout;
     Image12: TImage;
     imgchbChecked: TImage;
     imgchbUnchecked: TImage;
@@ -700,6 +699,7 @@ type
     procedure lstvTelefonesPainting(Sender: TObject; Canvas: TCanvas; const ARect: TRectF);
     procedure Rectangle45Click(Sender: TObject);
     procedure Rectangle53Click(Sender: TObject);
+    procedure Rectangle43Click(Sender: TObject);
   private
     FControllerRedes : TControllerRedesSociais;
 
@@ -1524,18 +1524,41 @@ end;
 
 procedure TfrmGestorClient.FormCreate(Sender: TObject);
 begin
-
     LoadStart;
     cfgAlteraAvaliacao := podeAlterarAvaliacao;
     imgAvaliacaoBloqueada.Visible := not cfgAlteraAvaliacao;
+    case cfgAlteraAvaliacao of
+         True : imgStatusAvaliacao.Bitmap.Assign(imgWarning.Bitmap);
+        False : imgStatusAvaliacao.Bitmap.Assign(imgCheck.Bitmap);
+    end;
 end;
 
 procedure TfrmGestorClient.LoadStart;
 var
 AGrupo, ASubGrupo : Boolean;
+AListaTag : TStringList;
+AIndex : Integer;
 begin
 
     LoadFichaComercio(cfgIdComercio);
+
+    mmDescricao.Text      := dmGeralClient.memComercio.FieldByName('SOBRECOM').AsString;
+    edtSlogam.Text        := dmGeralClient.memComercio.FieldByName('SLOGAMCOM').AsString;
+    try
+        AListaTag := TStringList.Create;
+
+        ExtractStrings([';'],[],pChar(dmGeralClient.memComercio.FieldByName('TAGCOM').AsString), AListaTag);
+
+        mmTag.Items.Clear;
+        for AIndex := 0 to AListaTag.Count - 1 do
+            mmTag.Items.Add.Text := AListaTag.Strings[AIndex];
+    finally
+        FreeAndNil(AListaTag);
+    end;
+
+    if (mmDescricao.Text = '') or (edtSlogam.Text = '') or (mmTag.Items.Count <= 0) then
+        imgStatusSobre.Bitmap.Assign(imgWarning.Bitmap) else
+        imgStatusSobre.Bitmap.Assign(imgCheck.Bitmap);
 
     edtIFood.Text    := dmGeralClient.memComercio.FieldByName('IFOODCOM').AsString;
     edtUberEats.Text := dmGeralClient.memComercio.FieldByName('UBEREATSCOM').AsString;
@@ -1754,8 +1777,8 @@ end;
 procedure TfrmGestorClient.recMenu1Click(Sender: TObject);
 begin
 
-    actRedesSociais.ExecuteTarget(Self);
     MenuLateral(TRectangle(Sender).Name);
+    actRedesSociais.ExecuteTarget(Self);
 
 end;
 
@@ -2242,6 +2265,48 @@ begin
         end;
 end;
 
+procedure TfrmGestorClient.Rectangle43Click(Sender: TObject);
+var
+ASemana : Array [1..7] of String;
+AIndex : Integer;
+const
+AtxtSem : Array [1..7] of String = ('Seg','Ter','Qua','Qui','Sex','Sab','Dom');
+begin
+
+    case ValidaHoras(Self) of
+        False : begin
+                    imgStatusFuncionamento.Bitmap := imgStop.Bitmap;
+                    MessageBox(WindowHandleToPlatform(Self.Handle).Wnd,
+                              'Existe algum inconsistência nos horários.' + #13 +
+                              'Corrija para continuar!',
+                              'Guia Alvo', MB_OK + MB_ICONEXCLAMATION);
+                    Exit;
+                end;
+         True : begin
+                    try
+                        for AIndex := 1 to 7 do
+                            ASemana[AIndex] := geraHoraBD(AtxtSem[AIndex],Self);
+
+                        salvaFuncionamento(cfgIdComercio, ASemana[1], ASemana[2], ASemana[3],
+                                           ASemana[4], ASemana[5], ASemana[6], ASemana[7]);
+                        imgStatusFuncionamento.Bitmap := imgCheck.Bitmap;
+                        MessageBox(WindowHandleToPlatform(Self.Handle).Wnd,
+                                  'Horário de funcionamento cadastrado com sucesso!',
+                                  'Guia Alvo', MB_OK + MB_ICONINFORMATION);
+                    except on E : Exception do
+                        begin
+                            imgStatusFuncionamento.Bitmap := imgStop.Bitmap;
+                            MessageBox(WindowHandleToPlatform(Self.Handle).Wnd,
+                                       pChar(format(ERRO_UPDATE_HORARIOS, [E.Message])),
+                                       'Guia Alvo', MB_OK + MB_ICONINFORMATION);
+                        end;
+
+                    end;
+                end;
+    end;
+
+end;
+
 procedure TfrmGestorClient.Rectangle45Click(Sender: TObject);
 var
 AIndex : Integer;
@@ -2252,11 +2317,40 @@ begin
         for AIndex := 0 to mmTag.Items.Count - 1 do
             ATag := ATag + ';' + mmTag.Items[AIndex].Text;
 
+        ATag := Copy(ATag, 2, Length(ATag));
+
+
+        imgStatusSobre.Bitmap.Assign(imgWarning.Bitmap);
+        if mmDescricao.Text = '' then
+            begin
+                MessageBox(WindowHandleToPlatform(Self.Handle).Wnd,
+                           'É necessário falar um pouco da sua empresa no campo descrição!', 'GuiaAlvo',
+                           MB_OK + MB_ICONWARNING);
+                Exit;
+            end;
+
+        if edtSlogam.Text = '' then
+            begin
+                MessageBox(WindowHandleToPlatform(Self.Handle).Wnd,
+                           'É necessário criar um Slogam para sua empresa!', 'GuiaAlvo',
+                           MB_OK + MB_ICONWARNING);
+                Exit;
+            end;
+        if mmTag.Items.Count <= 0 then
+            begin
+                MessageBox(WindowHandleToPlatform(Self.Handle).Wnd,
+                           'É necessário adicionar Tag´s da sua empresa, pois será através delas que ' +
+                           'sua empresa será encontrada no aplicativo GuiaAlvo!', 'GuiaAlvo',
+                           MB_OK + MB_ICONWARNING);
+                Exit;
+            end;
+
         gravaSobre(mmDescricao.Text, edtSlogam.Text, ATag);
 
         MessageBox(WindowHandleToPlatform(Self.Handle).Wnd,
                    'Informações salva com sucesso.', 'GuiaAlvo',
                    MB_OK + MB_ICONINFORMATION);
+        imgStatusSobre.Bitmap.Assign(imgCheck.Bitmap);
     Except
 
     end;
@@ -2460,12 +2554,13 @@ var
 I : Integer;
 begin
 
-     for i := 1 to 10 do
-           begin
-                if TRectangle(frmGestorClient.FindComponent('RecMenu' + i.ToString)).Name = AAtivo then
-                     TRectangle(frmGestorClient.FindComponent('RecMenu' + i.ToString)).Fill.Color := StringToAlphaColor('#FFE8EAFF') else
-                     TRectangle(frmGestorClient.FindComponent('RecMenu' + i.ToString)).Fill.Color := TAlphaColorRec.White;
-           end;
+for i := 1 to 10 do
+    begin
+        Application.ProcessMessages;
+        if TRectangle(frmGestorClient.FindComponent('RecMenu' + i.ToString)).Name = AAtivo then
+            TRectangle(frmGestorClient.FindComponent('RecMenu' + i.ToString)).Fill.Color := StringToAlphaColor('#FFE8EAFF') else
+            TRectangle(frmGestorClient.FindComponent('RecMenu' + i.ToString)).Fill.Color := TAlphaColorRec.White;
+    end;
 
 end;
 
@@ -2522,7 +2617,7 @@ begin
                 Rectangle53.Visible := True;
         end;
 
-
+    FormCreate(Self);
 end;
 
 procedure TfrmGestorClient.AddNovaCheckList(ACheckList : String);

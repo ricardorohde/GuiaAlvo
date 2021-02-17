@@ -1,22 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>2020/07/31 09:26:06.000.194,C:\Users\souza\Dropbox\EraSoft\Guia\GestorClient\GGClient.dproj=C:\Users\souza\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
-    <Transaction>2020/08/25 20:06:45.000.721,D:\Dropbox\EraSoft\Guia\GestorClient\Unit1.pas=D:\Dropbox\EraSoft\Guia\GestorClient\uContrato.pas</Transaction>
-    <Transaction>2020/09/05 17:05:41.000.138,E:\Projetos\Guia Alvo\trunk\GestorClient\View\GuiaAlvo.View.Principal.fmx=E:\Projetos\Guia Alvo\trunk\GestorClient\uGestorClient.fmx</Transaction>
-    <Transaction>2020/09/05 17:06:00.000.393,E:\Projetos\Guia Alvo\trunk\GestorClient\View\GuiaAlvo.View.ListaErros.fmx=E:\Projetos\Guia Alvo\trunk\GestorClient\uListaErros.fmx</Transaction>
-    <Transaction>2020/09/05 17:06:18.000.667,E:\Projetos\Guia Alvo\trunk\GestorClient\View\GuiaAlvo.View.Login.fmx=E:\Projetos\Guia Alvo\trunk\GestorClient\uLoginGestor.fmx</Transaction>
-    <Transaction>2020/09/05 17:06:43.000.569,E:\Projetos\Guia Alvo\trunk\GestorClient\View\GuiaAlvo.View.CadastroComercio.fmx=E:\Projetos\Guia Alvo\trunk\GestorClient\uNovoCadastro.fmx</Transaction>
-    <Transaction>2020/09/05 17:07:53.000.059,E:\Projetos\Guia Alvo\trunk\GestorClient\Model\GuiaAlvo.Model.ClienteModule.dfm=E:\Projetos\Guia Alvo\trunk\GestorClient\uCModule.dfm</Transaction>
-    <Transaction>2020/09/05 17:07:53.000.059,E:\Projetos\Guia Alvo\trunk\GestorClient\Model\GuiaAlvo.Model.ClienteModule.pas=E:\Projetos\Guia Alvo\trunk\GestorClient\uCModule.pas</Transaction>
-    <Transaction>2020/09/05 17:08:13.000.990,E:\Projetos\Guia Alvo\trunk\GestorClient\Model\GuiaAlvo.Model.ClientModule.dfm=E:\Projetos\Guia Alvo\trunk\GestorClient\Model\GuiaAlvo.Model.ClienteModule.dfm</Transaction>
-    <Transaction>2020/09/05 17:10:51.000.386,E:\Projetos\Guia Alvo\trunk\GestorClient\Model\GuiaAlvo.Model.DataModuleDados.dfm=E:\Projetos\Guia Alvo\trunk\GestorClient\dmGeral.dfm</Transaction>
-    <Transaction>2020/09/05 17:22:01.000.189,E:\Projetos\Guia Alvo\trunk\GestorClient\Model\GuiaAlvo.Model.ConexaoDataSetFireDac.dfm=E:\Projetos\Guia Alvo\trunk\GestorClient\Unit1.dfm</Transaction>
-    <Transaction>2021/01/31 12:58:41.000.062,E:\MSSoftware\Projetos\GuiaAlvo\trunk\GestorClient\View\GuiaAlvo.View.Planos.fmx=E:\MSSoftware\Projetos\GuiaAlvo\trunk\GestorClient\Unit2.fmx</Transaction>
-    <Transaction>2021/02/13 21:08:19.000.489,E:\MSSoftware\Projetos\GuiaAlvo\trunk\GestorClient\Model\GuiaAlvo.Model.ClientModule.dfm=E:\MSSoftware\Projetos\GuiaAlvo\trunk\GestorClient\Model\GuiaAlvo.Controller.ClientModule.dfm</Transaction>
-    <Transaction>2021/02/13 21:08:19.000.489,E:\MSSoftware\Projetos\GuiaAlvo\trunk\GestorClient\Model\GuiaAlvo.Model.ClientModule.pas=E:\MSSoftware\Projetos\GuiaAlvo\trunk\GestorClient\Model\GuiaAlvo.Controller.ClientModule.pas</Transaction>
-    <Transaction>2021/02/13 21:10:29.000.145,E:\MSSoftware\Projetos\GuiaAlvo\trunk\GestorClient\Model\GuiaAlvo.Controller.DataModuleDados.dfm=E:\MSSoftware\Projetos\GuiaAlvo\trunk\GestorClient\Model\GuiaAlvo.Model.DataModuleDados.dfm</Transaction>
-    <Transaction>2021/02/13 21:10:29.000.145,E:\MSSoftware\Projetos\GuiaAlvo\trunk\GestorClient\Model\GuiaAlvo.Controller.DataModuleDados.pas=E:\MSSoftware\Projetos\GuiaAlvo\trunk\GestorClient\Model\GuiaAlvo.Model.DataModuleDados.pas</Transaction>
+    <Transaction>2020/07/31 09:26:06.000.194,C:\Users\souza\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\souza\Dropbox\EraSoft\Guia\GestorClient\GGClient.dproj</Transaction>
+    <Transaction>2020/08/25 20:06:45.000.721,D:\Dropbox\EraSoft\Guia\GestorClient\uContrato.pas=D:\Dropbox\EraSoft\Guia\GestorClient\Unit1.pas</Transaction>
+    <Transaction>2020/09/05 17:05:41.000.138,E:\Projetos\Guia Alvo\trunk\GestorClient\uGestorClient.fmx=E:\Projetos\Guia Alvo\trunk\GestorClient\View\GuiaAlvo.View.Principal.fmx</Transaction>
+    <Transaction>2020/09/05 17:06:00.000.393,E:\Projetos\Guia Alvo\trunk\GestorClient\uListaErros.fmx=E:\Projetos\Guia Alvo\trunk\GestorClient\View\GuiaAlvo.View.ListaErros.fmx</Transaction>
+    <Transaction>2020/09/05 17:06:18.000.667,E:\Projetos\Guia Alvo\trunk\GestorClient\uLoginGestor.fmx=E:\Projetos\Guia Alvo\trunk\GestorClient\View\GuiaAlvo.View.Login.fmx</Transaction>
+    <Transaction>2020/09/05 17:06:43.000.569,E:\Projetos\Guia Alvo\trunk\GestorClient\uNovoCadastro.fmx=E:\Projetos\Guia Alvo\trunk\GestorClient\View\GuiaAlvo.View.CadastroComercio.fmx</Transaction>
+    <Transaction>2020/09/05 17:07:53.000.059,E:\Projetos\Guia Alvo\trunk\GestorClient\uCModule.dfm=E:\Projetos\Guia Alvo\trunk\GestorClient\Model\GuiaAlvo.Model.ClienteModule.dfm</Transaction>
+    <Transaction>2020/09/05 17:07:53.000.059,E:\Projetos\Guia Alvo\trunk\GestorClient\uCModule.pas=E:\Projetos\Guia Alvo\trunk\GestorClient\Model\GuiaAlvo.Model.ClienteModule.pas</Transaction>
+    <Transaction>2020/09/05 17:08:13.000.990,E:\Projetos\Guia Alvo\trunk\GestorClient\Model\GuiaAlvo.Model.ClienteModule.dfm=E:\Projetos\Guia Alvo\trunk\GestorClient\Model\GuiaAlvo.Model.ClientModule.dfm</Transaction>
+    <Transaction>2020/09/05 17:10:51.000.386,E:\Projetos\Guia Alvo\trunk\GestorClient\dmGeral.dfm=E:\Projetos\Guia Alvo\trunk\GestorClient\Model\GuiaAlvo.Model.DataModuleDados.dfm</Transaction>
+    <Transaction>2020/09/05 17:22:01.000.189,E:\Projetos\Guia Alvo\trunk\GestorClient\Unit1.dfm=E:\Projetos\Guia Alvo\trunk\GestorClient\Model\GuiaAlvo.Model.ConexaoDataSetFireDac.dfm</Transaction>
+    <Transaction>2021/01/31 12:58:41.000.062,E:\MSSoftware\Projetos\GuiaAlvo\trunk\GestorClient\Unit2.fmx=E:\MSSoftware\Projetos\GuiaAlvo\trunk\GestorClient\View\GuiaAlvo.View.Planos.fmx</Transaction>
+    <Transaction>2021/02/13 21:08:19.000.489,E:\MSSoftware\Projetos\GuiaAlvo\trunk\GestorClient\Model\GuiaAlvo.Controller.ClientModule.pas=E:\MSSoftware\Projetos\GuiaAlvo\trunk\GestorClient\Model\GuiaAlvo.Model.ClientModule.pas</Transaction>
+    <Transaction>2021/02/13 21:08:19.000.489,E:\MSSoftware\Projetos\GuiaAlvo\trunk\GestorClient\Model\GuiaAlvo.Controller.ClientModule.dfm=E:\MSSoftware\Projetos\GuiaAlvo\trunk\GestorClient\Model\GuiaAlvo.Model.ClientModule.dfm</Transaction>
+    <Transaction>2021/02/13 21:10:29.000.145,E:\MSSoftware\Projetos\GuiaAlvo\trunk\GestorClient\Model\GuiaAlvo.Model.DataModuleDados.dfm=E:\MSSoftware\Projetos\GuiaAlvo\trunk\GestorClient\Model\GuiaAlvo.Controller.DataModuleDados.dfm</Transaction>
+    <Transaction>2021/02/13 21:10:29.000.145,E:\MSSoftware\Projetos\GuiaAlvo\trunk\GestorClient\Model\GuiaAlvo.Model.DataModuleDados.pas=E:\MSSoftware\Projetos\GuiaAlvo\trunk\GestorClient\Model\GuiaAlvo.Controller.DataModuleDados.pas</Transaction>
   </Transactions>
 	<ActiveMobileDevice>
 		<NoProfile iOSSimulator="iPhone5" Android="" Android64=""/>

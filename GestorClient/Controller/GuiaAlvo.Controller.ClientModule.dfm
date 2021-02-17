@@ -3,7 +3,7 @@ object ModelClientModule: TModelClientModule
   Height = 271
   Width = 415
   object DSRestConnection: TDSRestConnection
-    Host = '192.168.15.21'
+    Host = 'erasoft.ddns.net'
     Port = 9090
     LoginPrompt = False
     Left = 48
